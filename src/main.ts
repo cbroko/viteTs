@@ -1,16 +1,15 @@
-import './style.scss'
-import typescriptLogo from './typescript.svg'
-import { setupCounter } from './counter'
+import "./style.scss";
+import { setupCounter } from "./counter";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
+    <a href="https://www.bouvet.no/" target="_blank">
+      <img src="/bouvet.png" class="logo" alt="Vite logo" />
     </a>
     <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
+      <img src="/typescript.svg" class="logo vanilla" alt="TypeScript logo" />
     </a>
-    <h1>Bouvet + Online</h1>
+    <h1>Bouvet + Online = TypeScript ❤️</h1>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
@@ -18,6 +17,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       Click on the Vite and TypeScript logos to learn more
     </p>
   </div>
-`
+`;
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
