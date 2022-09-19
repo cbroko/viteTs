@@ -89,11 +89,11 @@ button {
 	text-transform: uppercase;
 }
 button:hover {
-	border-color: $medium-grey;
+	background-color: $boris-orange;
 }
 button:focus,
 button:focus-visible {
-	outline: 4px auto -webkit-focus-ring-color;
+	outline: 4px auto $highlight-blue;
 }
 
 @media (prefers-color-scheme: light) {
