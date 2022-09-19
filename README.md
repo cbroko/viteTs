@@ -6,7 +6,8 @@ Prosjektet er bootstrappet med create-vite og vanilla-ts templaten. Les mer på 
 
 ## Komme i gang
 
-Sørg for at du har v16 av Node.js installert: [https://nodejs.org/en/](https://nodejs.org/en/)
+Sørg for at du har v16 av Node.js installert: [https://nodejs.org/en/](https://nodejs.org/en/).
+Bruk gjerne Visual Studio code: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 1. Kjør `npm ci`
 2. For å starte dev server, kjør `npm start`
