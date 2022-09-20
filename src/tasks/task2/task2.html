@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Oppgave 1</title>
+	</head>
+	<body>
+		<div>
+			<nav>
+				<a href="../../../index.html">Tilbake</a>
+			</nav>
+			<div id="app">
+				<h1>Oppgave 2</h1>
+				<div class="card">
+					<h2>Oppgave 2.1</h2>
+					<p>
+						Noen har prøvd å lage en knapp med en event listener, men den funker
+						ikke helt. Sjekk
+						<a href="task1.ts" target="_blank">task1.ts</a> for å se om du kan
+						finne ut hvorfor!
+					</p>
+					<button id="btn">Klikk meg!</button>
+					<p id="btn-msg"></p>
+				</div>
+				<div class="card">
+					<h2>Oppgave 2.2</h2>
+					<p>
+						Prøv å bytt ut koden i callbacken på linje 7-9 i oppgave 1.1 med:
+						<code class="block"
+							>setTextOnElement(outputElement, "Sweet, du har nesten løst
+							oppgave 1.2")</code
+						>
+						Du vil se at det er noen feilmeldinger knyttet til parameteren
+						<code class="inline">element</code> og
+						<code class="inline">text</code>, fikse det. Så vil TS-gudene være
+						evig takknemmelige!
+					</p>
+				</div>
+				<div class="card">
+					<h2>Oppgave 2.3</h2>
+					<p></p>
+					<input
+						type="text"
+						id="mood-input"
+						placeholder="Please state your emotional state ..."
+					/>
+					<p id="mood-output" style="font-size: 4em; margin-top: 0"></p>
+				</div>
+			</div>
+		</div>
+		<script type="module" src="./task2.ts"></script>
+	</body>
+</html>
