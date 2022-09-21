@@ -1,1 +1,67 @@
-Generics
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Oppgave 7</title>
+	</head>
+	<body>
+		<div>
+			<nav>
+				<a href="../../../index.html">Tilbake</a>
+			</nav>
+			<div id="app">
+				<h1>Oppgave 7</h1>
+				<div class="card">
+					<h2>Oppgave 7.1</h2>
+					<p>
+						Noen ganger kan det være vanskelig å huske det siste elementet i en
+						serie, som f.eks. siste tallet i tallserien fra Lost. Så noen har
+						skrevet en funksjon for hjelpe oss med dette. Men ønsker at den skal
+						kunne brukes til noe mer enn bare tall, og har fått til noe som
+						funker ved å bruke typen <code class="inline">any</code>.
+					</p>
+					<p>
+						Siden du akkurat har lært alt om TypeScript er du ivrig til å skrive
+						om denne for å få en mer precis typing. Så du bestemmer deg for å
+						skrive om denne funksjonen med en generisk parameter istedenfor å
+						bruke typen
+						<code class="inline">any</code>. Ettersom du vet at TypeScript da
+						vil klare å inferre riktig type for returverdien av funksjonen. Og
+						at den ikke lenger er <code class="inline">any</code>, som du ser at
+						den først er når du hovrer over variabelen
+						<code class="inline">lastElement</code>.
+					</p>
+					<p>
+						I tillfelle du lurer, så er det siste elmenetet
+						<strong id="last-value"></strong> i serien:
+						<code class="inline" id="series"></code>
+					</p>
+				</div>
+				<div class="card">
+					<h2>Oppgave 7.2</h2>
+					<p>
+						Det skal være en stor fest på Bouvetøya og noen har laget en snasen
+						liten kodesnutt for å invitere alle pingviner i Sørishavset.
+					</p>
+					<p>
+						Den er selvfølgelig skrevet i TypeScript, men har en feil (se linje
+						<code class="inline">28</code>)
+					</p>
+					<form id="name-form">
+						<input id="full-name-input" type="text" />
+						<button id="add-person-btn" type="submit">Inviter</button>
+					</form>
+					<p id="invite-status">Ingen 🐧 er invitert til festen 😞</p>
+					<h3>Gjesteliste:</h3>
+					<ul id="list-of-people"></ul>
+				</div>
+				<div class="card">
+					<h2>Oppgave 7.3</h2>
+				</div>
+			</div>
+		</div>
+		<script type="module" src="./task7.ts"></script>
+	</body>
+</html>

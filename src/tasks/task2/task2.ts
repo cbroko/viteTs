@@ -7,7 +7,6 @@ document.querySelector("#btn")?.addEventListener("click", () => {
 	const outputElement = document.querySelector("#btn-msg");
 	if (!outputElement) return;
 	outputElement.textContent = "Du klikket, veldig bra! 🥳";
-	setTextOnElement(outputElement, "edf");
 });
 
 /**
@@ -43,5 +42,5 @@ document.querySelector("#mood-input")?.addEventListener("input", (event) => {
 
 	const { value } = event.target as HTMLInputElement;
 	// TODO
-	outputElement.textContent = value in emojis ? getEmojiFromMood() : "😶";
+	outputElement.textContent = value in emojis ? getEmojiFromMood(value) : "😶";
 });
