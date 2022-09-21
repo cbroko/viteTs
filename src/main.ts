@@ -11,5 +11,3 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     <h1>Bouvet + Online = TypeScript ❤️</h1>
   </div>
 `;
-
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
