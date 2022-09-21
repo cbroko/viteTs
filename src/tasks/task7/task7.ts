@@ -40,7 +40,7 @@ document.querySelector("#add-person-btn")?.addEventListener("click", () => {
 		age: Math.floor(Math.random() * (100 - 18 + 1) + 18),
 	};
 	setTextContentOnElement("#invite-status", invite(penguin));
-	const list = document.querySelector("#list-of-people");
+	const list = document.querySelector("#guest-list");
 	const newItem = document.createElement("li");
 	const { fullName, age } = penguin;
 	newItem.textContent = `${fullName}, ${age} år`;
@@ -94,7 +94,7 @@ const skills = [
 
 			setTextContentOnElement(
 				"#dancing-guin-caption-text",
-				`Dancing ... please hold ... my drink!`
+				"Dancing ... please hold ... my drink!"
 			);
 		},
 		partyLevel: 200,

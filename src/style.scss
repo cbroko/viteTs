@@ -146,6 +146,9 @@ ul {
 	text-align: left;
 	list-style: none;
 	margin: auto;
+}
+
+.penguin-list {
 	width: 14rem;
 	max-width: 100%;
 }
@@ -156,8 +159,15 @@ li {
 }
 
 li:before {
-	content: "🐧";
 	padding-right: 5px;
+}
+
+.penguin-list li:before {
+	content: "🐧";
+}
+
+.pizza-list li:before {
+	content: "🍕";
 }
 
 .hidden {
