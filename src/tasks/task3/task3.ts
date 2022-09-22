@@ -5,10 +5,7 @@ import { setTextContentOnElement } from "../../utils";
  * Oppgave 3.1
  */
 interface Person {
-	firstName: string,
-	lastName: string,
-	age: number,
-	country: string
+
 }
 //No touchy
 const idYourSelf = ({ firstName, lastName, age, country }: Person) => {
@@ -34,10 +31,17 @@ type Student = {
 	// TODO
 };
 
-const provideStudentId = ({firstName, lastName, studentNumber}: Student) => {
+const provideStudentId = ({firstName, lastName, studentNumber, preferredLanguage}: Student) => {
 	setTextContentOnElement("#student-name", `${firstName} ${lastName}`);
 	setTextContentOnElement("#student-id", `${studentNumber}`);
+	setTextContentOnElement("#student-lang", `Utvekslingsstudent, ${getSupportedLanguage(preferredLanguage)}`);
 }
+const getSupportedLanguage= (language): string => {
+	return language === "nn" || language === "nb" ?
+		"Norsk" :
+		language === "en" ? "Engelsk" : "Language not supported";
+}
+
 //No touchy
 document.querySelector('#task33-btn')?.addEventListener("click", () => {
 	provideStudentId()
