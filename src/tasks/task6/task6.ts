@@ -1,14 +1,6 @@
 import "../../style.scss";
 import { getRandomNumberBetween } from "../../utils";
-
-// No touchy
-type topping =
-	| "Rød algesaus"
-	| "Hvalost"
-	| "Torsk"
-	| "Arktisk sølvfisk"
-	| "Arktisk drakfisk"
-	| "Sjøgress";
+import { topping } from "../../types";
 
 // No touchy
 interface Pizza {

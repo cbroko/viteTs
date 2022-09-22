@@ -173,3 +173,16 @@ li:before {
 .hidden {
 	visibility: hidden;
 }
+
+label {
+	display: flex;
+	text-align: left;
+	cursor: pointer;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+label input {
+	width: 44px;
+	height: 44px;
+}

@@ -1,1 +1,66 @@
-Class og interfaces
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Oppgave 5</title>
+	</head>
+	<body>
+		<div>
+			<nav>
+				<a href="../../../index.html">Tilbake</a>
+			</nav>
+			<div id="app">
+				<h1>Oppgave 5</h1>
+				<div class="card">
+					<h2>Oppgave 5.1</h2>
+					<p>
+						Mat kan spises, det vet de aller fleste. Derfor har noen som vet
+						nettopp dette lagd <code class="inline">interface Eatable</code>.
+					</p>
+					<p>
+						Men her trenger vi din hjelp for å sørge for at all mat av klassen
+						<code class="inline">Food</code> er spiselig...
+					</p>
+				</div>
+				<div class="card">
+					<h2>Oppgave 5.2</h2>
+					<p>De aller fleste vet også at pizza er mat.</p>
+					<p>
+						Og da har noen funnet ut at en klasse
+						<code class="inline">Pizza</code> burde kunne arve fra klassen
+						<code class="inline">Pizza</code>, men er usikker på hvordan.
+					</p>
+					<p>
+						Hjelp oss å fikse dette så skal du kunne spise og lage nye pizzaer
+						til du blir alldeles lei...
+					</p>
+					<p id="food-msg"></p>
+					<button id="eat-pizza">Spis!</button>
+					<button id="make-new-pizza">Lag ny pizza</button>
+				</div>
+				<div class="card">
+					<h2>Oppgave 5.3</h2>
+					<p>
+						Det er derimot ikke så veldig mange som vet at pingviner liker
+						pizza. Særlig de på Bouvetøya.
+					</p>
+					<p>
+						Derfor vil vi gjerne dele denne hemmlige lille pizza-velgeren med
+						deg. Og håper at du kan hjelpe oss å bestille pizza till de
+						pingvinene som ønsker det.
+					</p>
+					<p>
+						Hjelp oss å ferdigstille klassen
+						<code class="inline">BouvetPenguin</code> så skal dette funke fint.
+					</p>
+					<div id="pizza-maker"></div>
+					<button id="new-pizza-order">Lag ny pizza</button>
+					<p id="thank-you-msg"></p>
+				</div>
+			</div>
+		</div>
+		<script type="module" src="./task5.ts"></script>
+	</body>
+</html>

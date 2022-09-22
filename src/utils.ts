@@ -16,3 +16,12 @@ export function debounce(callback: (args: unknown[]) => void, timeout = 200) {
 
 export const getRandomNumberBetween = (min: number, max: number) =>
 	Math.floor(Math.random() * (max - min + 1) + min);
+
+export const pizzaToppings = [
+	"Rød algesaus",
+	"Hvalost",
+	"Torsk",
+	"Arktisk sølvfisk",
+	"Arktisk drakfisk",
+	"Sjøgress",
+] as const;
