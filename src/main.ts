@@ -1,5 +1,3 @@
-import "./style.scss";
-
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
     <a href="https://www.bouvet.no/" target="_blank">

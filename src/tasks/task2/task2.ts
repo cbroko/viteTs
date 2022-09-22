@@ -1,5 +1,3 @@
-import "../../style.scss";
-
 /**
  * Oppgave 2.1
  */

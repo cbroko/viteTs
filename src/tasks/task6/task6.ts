@@ -1,4 +1,3 @@
-import "../../style.scss";
 import { getRandomNumberBetween } from "../../utils";
 import { topping } from "../../types";
 

@@ -1,14 +1,24 @@
-@import "./styles/variables.scss";
-
 :root {
+	--colossus-blue: #11133c;
+	--off-white: #f9ead4;
+	--t800-black: #010203;
+	--white: #ffffff;
+	--boris-orange: #f9a86f;
+	--medium-grey: #fbf8f3;
+	--highlight-blue: #2642be;
+	--highlight-background: rgba(38, 66, 190, 0.2);
+	--focus-color: #97ffb3;
+
+	--focus-border-width: 4px;
+
 	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 400;
 
 	color-scheme: light dark;
-	color: $off-white;
-	background-color: $colossus-blue;
+	color: var(--off-white);
+	background-color: var(--colossus-blue);
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -19,11 +29,11 @@
 
 a {
 	font-weight: 800;
-	color: $boris-orange;
+	color: var(--boris-orange);
 	text-decoration: inherit;
 }
 a:hover {
-	color: $off-white;
+	color: var(--off-white);
 }
 
 body {
@@ -47,11 +57,10 @@ p {
 nav {
 	margin-top: 10px;
 	padding: 1em;
-
-	a {
-		margin: auto;
-		padding: 20px;
-	}
+}
+nav a {
+	margin: auto;
+	padding: 20px;
 }
 
 #app {
@@ -88,22 +97,22 @@ button {
 	font-size: 1em;
 	font-weight: 500;
 	font-family: inherit;
-	background-color: $off-white;
-	color: $t800-black;
+	background-color: var(--off-white);
+	color: var(--t800-black);
 	cursor: pointer;
 	transition: border-color 0.25s;
 	text-transform: uppercase;
 	font-weight: 800;
-	margin: 0 $focus-border-width;
+	margin: 0 var(--focus-border-width);
 }
 button:hover {
-	background-color: $boris-orange;
+	background-color: var(--boris-orange);
 }
 
 button:disabled {
 	background-color: transparent;
-	color: $off-white;
-	border-color: $off-white;
+	color: var(--off-white);
+	border-color: var(--off-white);
 	cursor: not-allowed;
 }
 
@@ -113,8 +122,8 @@ code {
 
 code.block {
 	display: block;
-	background-color: $off-white;
-	color: $t800-black;
+	background-color: var(--off-white);
+	color: var(--t800-black);
 	padding: 20px;
 	border-radius: 8px;
 	text-align: left;
@@ -122,7 +131,7 @@ code.block {
 }
 
 code.inline {
-	color: $boris-orange;
+	color: var(--boris-orange);
 }
 
 input {
@@ -132,14 +141,14 @@ input {
 	font-size: 1em;
 	font-weight: 500;
 	font-family: inherit;
-	background-color: $white;
-	color: $t800-black;
-	margin: 0 $focus-border-width;
+	background-color: var(--white);
+	color: var(--t800-black);
+	margin: 0 var(--focus-border-width);
 }
 
 *:focus {
-	outline: $focus-border-width solid $focus-color;
-	outline-offset: $focus-border-width;
+	outline: var(--focus-border-width) solid var(--focus-color);
+	outline-offset: var(--focus-border-width);
 }
 
 ul {

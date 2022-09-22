@@ -1,4 +1,3 @@
-import "../../style.scss";
 import { topping } from "../../types";
 import { pizzaToppings, setTextContentOnElement } from "../../utils";
 
