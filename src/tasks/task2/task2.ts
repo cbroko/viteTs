@@ -1,7 +1,7 @@
 /**
  * Oppgave 2.1
  */
-document.querySelector("#btn")?.addEventListener("click", () => {
+document.querySelector("#btn")?.addEventListener(() => {
 	const outputElement = document.querySelector("#btn-msg");
 	if (!outputElement) return;
 	outputElement.textContent = "Du klikket, veldig bra! 🥳";
