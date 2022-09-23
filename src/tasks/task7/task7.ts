@@ -77,6 +77,12 @@ class Penguin<
 	}
 }
 
+interface Skills {
+	name: string;
+	perform: () => void;
+	level: "beginner" | "intermediate" | "expert";
+}
+
 let partyTrickInProgress = false;
 const skills = [
 	{
@@ -96,7 +102,7 @@ const skills = [
 				"Dancing ... please hold ... my drink!"
 			);
 		},
-		partyLevel: 200,
+		level: "intermediate",
 	},
 	{
 		name: "brake dance",
@@ -115,10 +121,11 @@ const skills = [
 				`Break dancing ... please hold ... my drink!`
 			);
 		},
-		partyLevel: Number.MAX_VALUE,
+		level: "expert",
 	},
 ];
-const partyPenguin = new Penguin(skills);
+
+const partyPenguin = new Penguin<Skills>(skills);
 
 document.querySelector("#party-btn")?.addEventListener("click", () => {
 	if (partyTrickInProgress) return;
