@@ -183,7 +183,7 @@ li:before {
 	visibility: hidden;
 }
 
-label {
+.checkbox-label {
 	display: flex;
 	text-align: left;
 	cursor: pointer;
@@ -191,7 +191,17 @@ label {
 	margin-bottom: 20px;
 }
 
-label input {
+label input[type="checkbox"] {
 	width: 44px;
 	height: 44px;
+}
+
+math {
+	display: block;
+	background-color: var(--off-white);
+	color: var(--t800-black);
+	padding: 20px;
+	border-radius: 8px;
+	text-align: left;
+	margin: 20px 0;
 }

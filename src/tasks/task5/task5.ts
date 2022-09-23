@@ -64,6 +64,7 @@ pizzaToppings.forEach((topping) => {
 	});
 
 	const label = document.createElement("label");
+	label.classList.add("checkbox-label");
 	label.appendChild(input);
 	label.append(topping);
 
