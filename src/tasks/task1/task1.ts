@@ -1,10 +1,20 @@
+import { setTextContentOnElement } from "../../utils";
+
 /**
  * Oppgave 1.1
  */
-const number1 = 0;
-let number2 = number1 + 2;
-number2 += "2";
-console.log(`Oppgave 1.1: ${number2}`);
+const numberInput = document.querySelector(
+	"#number2-input"
+) as HTMLInputElement;
+
+const number1 = 2;
+
+document.querySelector("#calc-form")?.addEventListener("submit", (event) => {
+	event.preventDefault();
+	const number2 = numberInput?.value;
+	let sum = number1 + number2;
+	setTextContentOnElement("#sum", sum);
+});
 
 /**
  * Oppgave 1.2
