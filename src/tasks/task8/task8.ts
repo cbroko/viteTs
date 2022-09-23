@@ -1,23 +1,49 @@
+import { setTextContentOnElement } from "../../utils";
+
 interface Penguin {
 	name: string;
 	age: number;
+	weight: number;
+	height: number;
 	isTheFinestOfPenguins?: true;
 	numberOfDaysAtBouvetIsland?: number;
+	numberOfFriendsAtBouvetIsland?: number;
+	project?: Project;
+	annualSalary?: fish;
+	profession?:
+		| "developer"
+		| "designer"
+		| "project manager"
+		| "manager"
+		| "other";
 }
+
+interface Project {
+	name: string;
+	clientName: string;
+	startDate: Date;
+	endDate: Date;
+}
+
+type fish = number;
 
 /**
  * Oppgave 8.1
  */
 const aKeyOfPenguin: penguinKey = "name";
 
+const penguin = {
+	name: "Sverre",
+	age: 67,
+};
+
+setTextContentOnElement("#penguin-name", penguin[aKeyOfPenguin]);
+
 /**
  * Oppgave 8.2
  */
-const getPenguinValueFromKey = (obj, key) => obj[key];
-const penguinName = getPenguinValueFromKey(
-	{ name: "Sverre", age: 67 },
-	aKeyOfPenguin
-);
+const getValueByKey = <T>(obj: T, key) => obj[key];
+const penguinName = getValueByKey(penguin, aKeyOfPenguin);
 
 /**
  * Oppgave 8.3
@@ -25,15 +51,21 @@ const penguinName = getPenguinValueFromKey(
 type BouvetPenguin = Penguin & {
 	numberOfDaysAtBouvetIsland: number;
 	isTheFinestOfPenguins: true;
-	bouvetIslandNetwork: BouvetPenguin[];
+	numberOfFriendsAtBouvetIsland: number;
+	project: Project;
+	annualSalary: fish;
+	profession:
+		| "developer"
+		| "designer"
+		| "project manager"
+		| "manager"
+		| "other";
 };
 
 // TODO
-type CelverBouvetPenguin = {
-	[key in keyof Penguin]-?: Penguin[key];
-};
+type CleverBouvetPenguin = {};
 
-const cleverBouvetPenguin: CelverBouvetPenguin = {
+const cleverBouvetPenguin: CleverBouvetPenguin = {
 	name: "Christian",
 	age: 27,
 	isTheFinestOfPenguins: true,
@@ -43,10 +75,10 @@ const cleverBouvetPenguin: CelverBouvetPenguin = {
 type VolotilePenguin = Penguin & {
 	name?: string;
 	age?: number;
+	weight?: number;
+	height?: number;
 };
 
-type VolotileButCleverPenguin = {
-	[key in keyof Penguin]?: Penguin[key];
-};
+type VolotileButCleverPenguin = {};
 
-const volotileButCleverPenguin: VolotileButCleverPenguin = {};
+const volotileButCleverPenguin: VolotileButCleverPenguin = { age: 30 };

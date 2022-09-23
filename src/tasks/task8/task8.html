@@ -20,7 +20,7 @@
 					<p>Da har du kommet til ritkig kurs!</p>
 					<p>
 						Hvis du ser på <code class="inline">interface Penguin</code>, så ser
-						du alle egenskaper en helt vanlig pingvin kan ha. Men du skulle
+						du alle egenskaper hvilken som helst pingvin kan ha. Men du skulle
 						kanskje ønske at det fantes en <strong>union type</strong> for
 						akkurat det?
 					</p>
@@ -30,18 +30,53 @@
 						<code class="inline">interface Penguin</code>? Vi pleier å kalle
 						denne typen for <code class="inline">penguinKey</code>...
 					</p>
+					<p>Her møter du pingvinen <strong id="penguin-name"></strong></p>
+					<img src="/penguin-dancing.gif" alt="Dansende pingvin" />
+					<p>Han virker lykkelig uvitende om TS-errors på linje 13 og 20...</p>
 				</div>
 				<div class="card">
 					<h2>Oppgave 8.2</h2>
-
-					<p></p>
+					<p>
+						Man kunne også tenkt seg en mer generell funksjon som hjelper oss å
+						hente ut egenskaper for et hvilket som helst objekt. Her gjenstår
+						bare typingen på parameteren <code class="inline">key</code>...
+					</p>
 				</div>
 				<div class="card">
 					<h2>Oppgave 8.3</h2>
-					<p></p>
+					<p>
+						Bouvetpingviner er ganske like vanlige pingviner, men det er noen
+						åpenbare forskjeller. Derfor har noen laget
+						<code class="inline">type BouvetPenguin</code>. Men det finnes en
+						mer kompakt måte å gjøre dette på.
+					</p>
+					<p>
+						Se om du kan lage en
+						<strong>mapped type</strong> av
+						<code class="inline">type CleverBouvetPenguin</code>, for å oppnå
+						det samme som <code class="inline">type BouvetPenguin</code> men med
+						færre linjer.
+					</p>
+				</div>
+				<div class="card">
+					<h2>Oppgave 8.4</h2>
+					<p>
+						Det finnes også flyktige pingviner, som ikke nødvendigvis har f.eks.
+						et navn. Derfor har noen laget
+						<code class="inline">type VolotilePenguin</code>. Men det finnes
+						også en enklere måte å gjøre dette på.
+					</p>
+					<p>
+						Se om du kan lage en
+						<strong>mapped type</strong> av
+						<code class="inline">type VolotileButCleverPenguin</code>, for å
+						oppnå det samme som
+						<code class="inline">type VolotilePenguin</code> men med færre
+						linjer.
+					</p>
 				</div>
 			</div>
 		</div>
-		<script type="module" src="./task7.ts"></script>
+		<script type="module" src="./task8.ts"></script>
 	</body>
 </html>
