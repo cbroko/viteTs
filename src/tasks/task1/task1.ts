@@ -14,20 +14,35 @@ document.querySelector("#calc-form")?.addEventListener("submit", (event) => {
 	const number2 = numberInput?.value;
 	let sum = number1 + number2;
 	setTextContentOnElement("#sum", sum);
+	numberInput.value = "";
 });
 
 /**
  * Oppgave 1.2
  */
-const sayHi = (name: string) => {
-	console.log("Oppgave 1.2: ", `Hei ${name}`);
-};
-sayHi();
+const sayHi = (name: string) => `Hei ${name}!`;
+document.querySelector("#name-form")?.addEventListener("submit", (event) => {
+	event.preventDefault();
+	const input = document.querySelector("#name-input") as HTMLInputElement;
+	const name = input?.value;
+	const greeting = sayHi();
+	setTextContentOnElement("#greet", greeting);
+	input.value = "";
+});
 
 /**
  * Oppgave 1.3
  */
-const giveMeAStraightAnswer = (answer: "yes" | "no") => {
-	console.log("Oppgave 1.3: ", answer);
-};
-giveMeAStraightAnswer();
+const giveMeAStraightAnswer = (question) =>
+	question.length % 2 ? "ja!" : "nei!";
+
+document
+	.querySelector("#question-form")
+	?.addEventListener("submit", (event) => {
+		event.preventDefault();
+		const input = document.querySelector("#question-input") as HTMLInputElement;
+		const question = input?.value;
+		const answer = giveMeAStraightAnswer();
+		setTextContentOnElement("#answer", answer);
+		input.value = "";
+	});

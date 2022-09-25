@@ -20,30 +20,63 @@
 						Noen har prøvd å lage en veldig hjelpsom kalkulator som skal kunne
 						addere tallet 2 med et hvilket som helst annet tall:
 					</p>
+					<p>Se om TypeScript og IntelliSense kan hjelpe deg å fikse dette.</p>
 					<form id="calc-form">
 						<input
 							type="number"
 							id="number2-input"
 							value="2"
-							placeholder="skriv inn et tall"
+							placeholder="Skriv inn et tall"
 							step="1"
 							aria-label="Tall nummer 2 i utregningen"
 						/>
 						<button>Regn ut</button>
 					</form>
 					<math>
-						<mn id="number1">2</mn><mo>+</mo><mn id="number2">2</mn><mo>=</mo
-						><mn id="sum"></mn>
+						<mn id="number1">2</mn><mo>+</mo><mn id="number2">2</mn><mo>=</mo>
+						<mn id="sum"></mn>
 					</math>
-					<p><strong>Men</strong> noe er galt med utregningen her...</p>
+					<p><strong>Men</strong>, noe er galt med utregningen her...</p>
 				</div>
 				<div class="card">
 					<h2>Oppgave 1.2</h2>
-					<p></p>
+					<p>Noen har prøvd å lage en form som hilser, men bommet litt</p>
+					<p>
+						Her er det kanskje noen TS-errors som kan hjelpe oss å fikse dette?
+					</p>
+					<form id="name-form">
+						<input
+							type="text"
+							id="name-input"
+							placeholder="Skriv inn navnet ditt"
+							aria-label="Ditt navn"
+						/>
+						<button>Hils</button>
+					</form>
+					<p><strong id="greet">...</strong></p>
 				</div>
 				<div class="card">
 					<h2>Oppgave 1.3</h2>
-					<p></p>
+					<p>
+						Av og til er det deilig med et ærlig svar. Så her har noen prøvd å
+						lage en form som svarer deg så ærlig som mulig.
+					</p>
+					<p>Men den virker ikke helt enda. Den gir ikke noen svar 😐</p>
+					<p>Det virker også som det er en typing som mangler her...</p>
+					<p>
+						Hvis du fikser dette kan du spørre om hva som helst og alltid få et
+						100% ærlig svar.
+					</p>
+					<form id="question-form">
+						<input
+							type="text"
+							id="question-input"
+							placeholder="Skriv et spørsmål"
+							aria-label="Ditt spørsmål"
+						/>
+						<button>Spør</button>
+					</form>
+					<p><strong id="answer">...</strong></p>
 				</div>
 			</div>
 		</div>
