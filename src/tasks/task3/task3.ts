@@ -63,11 +63,11 @@ const provideNTNUStudentId = ({
 	faculty,
 	studentNumber,
 }: NTNUStudent) => {
-	setTextContentOnElement("#student-name", `${lastName}`);
-	setTextContentOnElement("#student-id", `${studentNumber}`);
-	setTextContentOnElement("#student-faculty", `${faculty.name}`);
+	setTextContentOnElement("#ntnu-name", `${lastName}`);
+	setTextContentOnElement("#ntnu-id", `${studentNumber}`);
+	setTextContentOnElement("#ntnu-faculty", `${faculty.name}`);
 	setTextContentOnElement(
-		"#student-leader",
+		"#ntnu-leader",
 		`${faculty.leader.firstName} ${faculty.leader.lastName}`
 	);
 };
