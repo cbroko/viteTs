@@ -43,7 +43,17 @@ setTextContentOnElement("#penguin-name", penguin[aKeyOfPenguin]);
  * Oppgave 8.2
  */
 const getValueByKey = <T>(obj: T, key) => obj[key];
-const penguinName = getValueByKey(penguin, aKeyOfPenguin);
+
+setTextContentOnElement(
+	"#get-value-by-key-output-1",
+	`penguin[${aKeyOfPenguin}]: ${getValueByKey(penguin, aKeyOfPenguin)}`
+);
+
+const otherObject = { color: "red" };
+setTextContentOnElement(
+	"#get-value-by-key-output-2",
+	`otherObject["color"]: ${getValueByKey(otherObject, "color")}`
+);
 
 /**
  * Oppgave 8.3
@@ -62,8 +72,9 @@ type BouvetPenguin = Penguin & {
 		| "other";
 };
 
-// TODO
-type CleverBouvetPenguin = {};
+type CleverBouvetPenguin = {
+	// TODO
+};
 
 const cleverBouvetPenguin: CleverBouvetPenguin = {
 	name: "Christian",
@@ -82,6 +93,8 @@ type VolatilePenguin = Penguin & {
 	height?: number;
 };
 
-type VolatileButCleverPenguin = {};
+type VolatileButCleverPenguin = {
+	// TODO
+};
 
 const volotileButCleverPenguin: VolatileButCleverPenguin = { age: 30 };
