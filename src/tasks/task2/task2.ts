@@ -1,8 +1,8 @@
 /**
  * Oppgave 2.1
  */
-document.querySelector("#btn")?.addEventListener("click", () => {
-	const outputElement = document.querySelector("#btn-msg");
+document.getElementById("btn")?.addEventListener("click", () => {
+	const outputElement = document.getElementById("btn-msg");
 	/* if (!outputElement) return;
 	outputElement.textContent = "Du klikket, veldig bra! 🥳"; */
 	setTextOnElement(outputElement, "Sweet, du har nesten løst oppgave 2.2")
@@ -43,8 +43,8 @@ const getEmojiFromMood = (mood: moodType): string => {
 	return emojis[mood];
 };
 
-document.querySelector("#mood-input")?.addEventListener("input", (event) => {
-	const outputElement = document.querySelector("#mood-output");
+document.getElementById("mood-input")?.addEventListener("input", (event) => {
+	const outputElement = document.getElementById("mood-output");
 	const { value } = event.target as HTMLInputElement;
 	const emoji = value in emojis ? getEmojiFromMood(value as moodType) : "😶";
 	setTextOnElement(outputElement, emoji);

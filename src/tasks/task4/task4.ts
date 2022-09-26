@@ -39,7 +39,7 @@ const performTasks = (terminator: Terminator): void => {
 	}
 };
 
-document.querySelector("#task41-btn")?.addEventListener("click", () => {
+document.getElementById("task41-btn")?.addEventListener("click", () => {
 	performTasks(basicTerminator);
 });
 
@@ -71,7 +71,7 @@ const terminator1 = (arnold: T800) => {
 	}
 };
 
-document.querySelector("#task42-btn")?.addEventListener("click", () => {
+document.getElementById("task42-btn")?.addEventListener("click", () => {
 	terminator1(arnold);
 });
 
@@ -104,6 +104,6 @@ const terminator2 = (liquidTerminator: T1000) => {
 	}
 };
 
-document.querySelector("#task43-btn")?.addEventListener("click", () => {
+document.getElementById("task43-btn")?.addEventListener("click", () => {
 	terminator2(terminatiorT1000);
 });

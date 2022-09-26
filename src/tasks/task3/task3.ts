@@ -23,7 +23,7 @@ const personToId = {
 };
 
 //No touchy
-document.querySelector("#task31-btn")?.addEventListener("click", () => {
+document.getElementById("task31-btn")?.addEventListener("click", () => {
 	idYourSelf(personToId);
 });
 
@@ -62,7 +62,7 @@ const studentToId: Student = {
 	preferredLanguage: "nb"
 };
 
-document.querySelector("#task32-btn")?.addEventListener("click", () => {
+document.getElementById("task32-btn")?.addEventListener("click", () => {
 	provideStudentId(studentToId);
 });
 
@@ -105,6 +105,6 @@ const provideNTNUStudentId = ({
 	);
 };
 
-document.querySelector("#task33-btn")?.addEventListener("click", () => {
+document.getElementById("task33-btn")?.addEventListener("click", () => {
 	provideNTNUStudentId(NTNUStudentId);
 });

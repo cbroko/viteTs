@@ -11,11 +11,11 @@ const lastValueOf = <T> (array: T[]) =>
 const cursedNumbers = [4, 8, 15, 16, 23, 42];
 const lastElement = lastValueOf(cursedNumbers);
 
-const seriesElement = document.querySelector("#series");
+const seriesElement = document.getElementById("series");
 if (seriesElement)
 	seriesElement.textContent = `[ ${cursedNumbers.join(", ")} ]`;
 
-const lastValue = document.querySelector("#last-value");
+const lastValue = document.getElementById("last-value");
 if (lastValue) lastValue.textContent = lastElement?.toString() ?? "";
 
 /**
@@ -29,17 +29,15 @@ interface Nameable {
 const invite = <T extends Nameable>({ fullName }: T) =>
 	`🐧🎉 ${fullName} er invitert til festen! 🥳`;
 
-const inputElement = document.querySelector(
-	"#full-name-input"
-) as null | HTMLInputElement;
-document.querySelector("#add-person-btn")?.addEventListener("click", () => {
+const inputElement = document.getElementById("full-name-input") as null | HTMLInputElement;
+document.getElementById("add-person-btn")?.addEventListener("click", () => {
 	if (!inputElement || !inputElement.value.length) return;
 	const penguin = {
 		fullName: inputElement.value,
 		age: Math.floor(Math.random() * (100 - 18 + 1) + 18),
 	};
 	setTextContentOnElement("#invite-status", invite(penguin));
-	const list = document.querySelector("#guest-list");
+	const list = document.getElementById("guest-list");
 	const newItem = document.createElement("li");
 	const { fullName, age } = penguin;
 	newItem.textContent = `${fullName}, ${age} år`;
@@ -48,7 +46,7 @@ document.querySelector("#add-person-btn")?.addEventListener("click", () => {
 	inputElement.value = "";
 });
 
-document.querySelector("#name-form")?.addEventListener("submit", (event) => {
+document.getElementById("name-form")?.addEventListener("submit", (event) => {
 	event.preventDefault();
 });
 
@@ -92,7 +90,7 @@ const skills = [
 		name: "dance",
 		perform: () => {
 			partyTrickInProgress = true;
-			const dancingGuin = document.querySelector("#dancing-guin");
+			const dancingGuin = document.getElementById("dancing-guin");
 			dancingGuin?.classList.remove("hidden");
 
 			setTimeout(() => {
@@ -111,7 +109,7 @@ const skills = [
 		name: "brake dance",
 		perform: () => {
 			partyTrickInProgress = true;
-			const breakDancingGuin = document.querySelector("#break-dancing-guin");
+			const breakDancingGuin = document.getElementById("break-dancing-guin");
 			breakDancingGuin?.classList.remove("hidden");
 
 			setTimeout(() => {
@@ -131,13 +129,13 @@ const skills = [
 const partyPenguin = new Penguin<Skills>(skills);
 
 // No touchy
-document.querySelector("#party-btn")?.addEventListener("click", () => {
+document.getElementById("party-btn")?.addEventListener("click", () => {
 	if (partyTrickInProgress) return;
 	partyPenguin.doPartyTrick();
 });
 
 // No touchy
-const allSkillsElement = document.querySelector("#all-skills");
+const allSkillsElement = document.getElementById("all-skills");
 if (allSkillsElement) {
 	allSkillsElement.textContent = partyPenguin.tellUsAllYourPartyTricks();
 }

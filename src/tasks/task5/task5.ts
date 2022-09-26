@@ -37,11 +37,11 @@ class Pizza extends Food {
 }
 
 let pizza: Pizza;
-document.querySelector("#eat-pizza")?.addEventListener("click", () => {
+document.getElementById("eat-pizza")?.addEventListener("click", () => {
 	pizza.eat();
 });
 
-document.querySelector("#make-new-pizza")?.addEventListener("click", () => {
+document.getElementById("make-new-pizza")?.addEventListener("click", () => {
 	pizza = new Pizza(["Rød algesaus", "Hvalost", "Sjøgress"]);
 	setTextContentOnElement(
 		"#food-msg",
@@ -62,7 +62,7 @@ class BouvetPenguin implements CanOrderPizza {
 	orderNewPizza = (pizza: Pizza) => { console.log("pizza: ", pizza); return `Tusen takk!` };
 }
 
-const pizaMaker = document.querySelector("#pizza-maker");
+const pizaMaker = document.getElementById("pizza-maker");
 const selectedToppings: topping[] = [];
 
 pizzaToppings.forEach((topping) => {
@@ -84,7 +84,7 @@ pizzaToppings.forEach((topping) => {
 	pizaMaker?.appendChild(label);
 });
 
-document.querySelector("#new-pizza-order")?.addEventListener("click", () => {
+document.getElementById("new-pizza-order")?.addEventListener("click", () => {
 	const pizza = new Pizza(selectedToppings);
 	const bouvetPenguin = new BouvetPenguin();
 	const thankYouMessage = bouvetPenguin.orderNewPizza(pizza);
