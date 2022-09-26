@@ -76,13 +76,16 @@ const cleverBouvetPenguin: CleverBouvetPenguin = {
 	numberOfDaysAtBouvetIsland: 738,
 };
 
-type VolotilePenguin = Penguin & {
+/**
+ * Oppgave 8.4
+ */
+type VolatilePenguin = Penguin & {
 	name?: string;
 	age?: number;
 	weight?: number;
 	height?: number;
 };
 
-type VolotileButCleverPenguin = {};
+type VolatileButCleverPenguin = {};
 
-const volotileButCleverPenguin: VolotileButCleverPenguin = { age: 30 };
+const volotileButCleverPenguin: VolatileButCleverPenguin = { age: 30 };
