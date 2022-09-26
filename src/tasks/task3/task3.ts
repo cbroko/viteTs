@@ -3,7 +3,12 @@ import { setTextContentOnElement } from "../../utils";
 /**
  * Oppgave 3.1
  */
-interface Person {}
+interface Person {
+	firstName: string,
+	lastName: string,
+	age: number,
+	country: string
+}
 //No touchy
 const idYourSelf = ({ firstName, lastName, age, country }: Person) => {
 	setTextContentOnElement("#person-name", `${firstName} ${lastName}`);
@@ -11,7 +16,10 @@ const idYourSelf = ({ firstName, lastName, age, country }: Person) => {
 	setTextContentOnElement("#person-country", `${country}`);
 };
 const personToId = {
-	// TODO
+	firstName: "Kari",
+	lastName: "Normann",
+	age: 32,
+	country: "Norway"
 };
 
 //No touchy
@@ -22,8 +30,9 @@ document.querySelector("#task31-btn")?.addEventListener("click", () => {
 /**
  * Oppgave 3.2
  */
-type Student = {
-	// TODO
+type Student = Person & {
+	studentNumber: number,
+	preferredLanguage: string
 };
 
 const provideStudentId = ({
@@ -47,7 +56,6 @@ const getSupportedLanguage = (language): string => {
 		: "Language not supported";
 };
 
-//No touchy
 document.querySelector("#task33-btn")?.addEventListener("click", () => {
 	provideStudentId();
 });
@@ -72,7 +80,7 @@ const provideNTNUStudentId = ({
 		`${faculty.leader.firstName} ${faculty.leader.lastName}`
 	);
 };
-//No touchy
+
 document.querySelector("#task33-btn")?.addEventListener("click", () => {
 	provideNTNUStudentId();
 });
