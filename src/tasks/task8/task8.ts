@@ -101,6 +101,15 @@ const cleverBouvetPenguin: CleverBouvetPenguin = {
 	isTheFinestOfPenguins: true,
 	weight: 80,
 	height: 186,
+	numberOfDaysAtBouvetIsland: Math.round(3.5 * 365),
+	numberOfFriendsAtBouvetIsland: 30,
+	annualSalary: 50,
+	profession: "developer",
+	project: {
+		name: "SG",
+		clientName: "Service Grossistene",
+		startDate: new Date("2022-08-01"),
+	},
 };
 
 if (hasEqualKeys(bouvetPenguin, cleverBouvetPenguin)) {
