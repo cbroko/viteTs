@@ -36,9 +36,8 @@ const getEmojiFromMood = () => {
 
 document.querySelector("#mood-input")?.addEventListener("input", (event) => {
 	const outputElement = document.querySelector("#mood-output");
-	if (!outputElement || !event.target) return;
-
 	const { value } = event.target as HTMLInputElement;
 	// TODO
-	outputElement.textContent = value in emojis ? getEmojiFromMood(value) : "😶";
+	const emoji = value in emojis ? getEmojiFromMood(value) : "😶";
+	setTextOnElement(outputElement, emoji);
 });
