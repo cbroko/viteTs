@@ -1,8 +1,8 @@
 /**
  * Oppgave 2.1
  */
-document.querySelector("#btn")?.addEventListener(() => {
-	const outputElement = document.querySelector("#btn-msg");
+document.getElementById("btn")?.addEventListener(() => {
+	const outputElement = document.getElementById("btn-msg");
 	if (!outputElement) return;
 	outputElement.textContent = "Du klikket, veldig bra! 🥳";
 });
@@ -34,8 +34,8 @@ const getEmojiFromMood = () => {
 	// TODO
 };
 
-document.querySelector("#mood-input")?.addEventListener("input", (event) => {
-	const outputElement = document.querySelector("#mood-output");
+document.getElementById("mood-input")?.addEventListener("input", (event) => {
+	const outputElement = document.getElementById("mood-output");
 	const { value } = event.target as HTMLInputElement;
 	// TODO
 	const emoji = value in emojis ? getEmojiFromMood(value) : "😶";

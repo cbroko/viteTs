@@ -15,7 +15,7 @@ const personToId = {
 };
 
 //No touchy
-document.querySelector("#task31-btn")?.addEventListener("click", () => {
+document.getElementById("task31-btn")?.addEventListener("click", () => {
 	idYourSelf(personToId);
 });
 
@@ -47,7 +47,7 @@ const getSupportedLanguage = (language): string => {
 		: "Language not supported";
 };
 
-document.querySelector("#task32-btn")?.addEventListener("click", () => {
+document.getElementById("task32-btn")?.addEventListener("click", () => {
 	provideStudentId();
 });
 
@@ -72,6 +72,6 @@ const provideNTNUStudentId = ({
 	);
 };
 
-document.querySelector("#task33-btn")?.addEventListener("click", () => {
+document.getElementById("task33-btn")?.addEventListener("click", () => {
 	provideNTNUStudentId();
 });
