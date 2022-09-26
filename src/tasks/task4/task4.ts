@@ -1,7 +1,13 @@
 /**
  * Oppgave 4.1
  */
-interface Terminator {}
+interface Terminator {
+	target: string,
+	weapon: string,
+	boot: () => void,
+	getDefaultDirective: () => string,
+	checkTarget: (name: string) => boolean
+}
 
 const basicTerminator: Terminator = {
 	boot: () => {
@@ -10,13 +16,14 @@ const basicTerminator: Terminator = {
 	getDefaultDirective: () => {
 		return "Come with me if you want to live.";
 	},
-	checkTarget(name) {
+	checkTarget(name: string) {
 		return this.target === name;
 	},
 	target: "Sarah Connor",
 	weapon: "gun",
 };
 
+// No touchy
 const performTasks = (terminator: Terminator): void => {
 	try {
 		terminator.boot();
@@ -31,14 +38,22 @@ const performTasks = (terminator: Terminator): void => {
 		console.error("Beep boop. Error detected:", error);
 	}
 };
+
 document.querySelector("#task41-btn")?.addEventListener("click", () => {
-	performTasks();
+	performTasks(basicTerminator);
 });
 
 /**
  * Oppgave 4.2
  */
-type T800 = {};
+type T800 = Terminator & {
+	accent: string
+};
+
+const arnold: T800 = {
+	...(basicTerminator),
+	accent: "Austrian"
+}
 
 const terminator1 = (arnold: T800) => {
 	try {
@@ -57,13 +72,20 @@ const terminator1 = (arnold: T800) => {
 };
 
 document.querySelector("#task42-btn")?.addEventListener("click", () => {
-	terminator1();
+	terminator1(arnold);
 });
 
 /**
  * Oppgave 4.3
  */
-type T1000 = {};
+type T1000 = Terminator & {
+	shapes: string[]
+};
+
+const terminatiorT1000 = {
+	...(basicTerminator),
+	shapes: ["circle", "square"]
+}
 
 const terminator2 = (liquidTerminator: T1000) => {
 	try {
@@ -83,5 +105,5 @@ const terminator2 = (liquidTerminator: T1000) => {
 };
 
 document.querySelector("#task43-btn")?.addEventListener("click", () => {
-	terminator2();
+	terminator2(terminatiorT1000);
 });
