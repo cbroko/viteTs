@@ -16,7 +16,7 @@ if (seriesElement)
 	seriesElement.textContent = `[ ${cursedNumbers.join(", ")} ]`;
 
 const lastValue = document.querySelector("#last-value");
-if (lastValue) lastValue.textContent = lastElement;
+if (lastValue) lastValue.textContent = lastElement?.toString() ?? "";
 
 /**
  * Oppgave 7.2
@@ -77,12 +77,15 @@ class Penguin<
 	}
 }
 
+// No touchy
+type levelType = "beginner" | "intermediate" | "expert";
 interface Skills {
 	name: string;
 	perform: () => void;
-	level: "beginner" | "intermediate" | "expert";
+	level: levelType;
 }
 
+// No touchy
 let partyTrickInProgress = false;
 const skills = [
 	{
@@ -102,7 +105,7 @@ const skills = [
 				"Dancing ... please hold ... my drink!"
 			);
 		},
-		level: "intermediate",
+		level: "intermediate" as levelType,
 	},
 	{
 		name: "brake dance",
@@ -121,17 +124,19 @@ const skills = [
 				`Break dancing ... please hold ... my drink!`
 			);
 		},
-		level: "expert",
+		level: "expert" as levelType,
 	},
 ];
-
+// No touchy
 const partyPenguin = new Penguin<Skills>(skills);
 
+// No touchy
 document.querySelector("#party-btn")?.addEventListener("click", () => {
 	if (partyTrickInProgress) return;
 	partyPenguin.doPartyTrick();
 });
 
+// No touchy
 const allSkillsElement = document.querySelector("#all-skills");
 if (allSkillsElement) {
 	allSkillsElement.textContent = partyPenguin.tellUsAllYourPartyTricks();
