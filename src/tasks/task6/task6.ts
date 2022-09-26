@@ -12,7 +12,7 @@ interface Pizza {
 const pizzas = [];
 
 /**
- * Oppgave 6.1
+ * Oppgave 6.2
  */
 (
 	["Torsk", "Arktisk sølvfisk", "Arktisk drakfisk", "Sjøgress"] as topping[]
@@ -28,12 +28,12 @@ const pizzas = [];
 	li.textContent = toppings.join(", ");
 	document.querySelector("#pizza-menu")?.appendChild(li);
 	pizzas.push({
-		toppings, // TODO
+		toppings,
 	});
 });
 
 /**
- * Oppgave 6.2
+ * Oppgave 6.3
  */
 const serveSverreHisPizza = (toppingSverreWants: topping) =>
 	pizzas.find((pizza) => pizza);
@@ -45,7 +45,6 @@ document.querySelector("#serve-btn")?.addEventListener("click", () => {
 	sadSverre?.classList.add("hidden");
 
 	const toppingSverreWants = "Arktisk sølvfisk";
-	//TODO
 	if (
 		serveSverreHisPizza(toppingSverreWants)?.toppings.includes(
 			toppingSverreWants
