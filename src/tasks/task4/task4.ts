@@ -1,5 +1,5 @@
 /**
- * Oppgave 3.1
+ * Oppgave 4.1
  */
 interface Terminator {}
 
@@ -36,7 +36,7 @@ document.querySelector("#task41-btn")?.addEventListener("click", () => {
 });
 
 /**
- * Oppgave 3.2
+ * Oppgave 4.2
  */
 type T800 = {};
 
@@ -61,7 +61,7 @@ document.querySelector("#task42-btn")?.addEventListener("click", () => {
 });
 
 /**
- * Oppgave 3.3
+ * Oppgave 4.3
  */
 type T1000 = {};
 
