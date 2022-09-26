@@ -26,7 +26,7 @@ const pizzas = [];
 		extraTopping,
 	];
 	li.textContent = toppings.join(", ");
-	document.querySelector("#pizza-menu")?.appendChild(li);
+	document.getElementById("pizza-menu")?.appendChild(li);
 	pizzas.push({
 		toppings,
 	});
@@ -38,9 +38,9 @@ const pizzas = [];
 const serveSverreHisPizza = (toppingSverreWants: topping) =>
 	pizzas.find((pizza) => pizza);
 
-document.querySelector("#serve-btn")?.addEventListener("click", () => {
-	const dancingSverre = document.querySelector("#dancing-sverre");
-	const sadSverre = document.querySelector("#sad-sverre");
+document.getElementById("serve-btn")?.addEventListener("click", () => {
+	const dancingSverre = document.getElementById("dancing-sverre");
+	const sadSverre = document.getElementById("sad-sverre");
 	dancingSverre?.classList.add("hidden");
 	sadSverre?.classList.add("hidden");
 
