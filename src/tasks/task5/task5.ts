@@ -59,7 +59,7 @@ type CanOrderPizza = {
 
 class BouvetPenguin implements CanOrderPizza {
 	orderedPizza = new Pizza(["Rød algesaus", "Hvalost", "Sjøgress"]);
-	orderNewPizza = (pizza: Pizza): `Tusen takk!` => { console.log("pizza: ", pizza); return `Tusen takk!` };
+	orderNewPizza = (pizza: Pizza) => { console.log("pizza: ", pizza); return `Tusen takk!` };
 }
 
 const pizaMaker = document.querySelector("#pizza-maker");
