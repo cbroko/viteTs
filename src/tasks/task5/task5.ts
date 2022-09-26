@@ -38,7 +38,10 @@ document.querySelector("#eat-pizza")?.addEventListener("click", () => {
 
 document.querySelector("#make-new-pizza")?.addEventListener("click", () => {
 	pizza = new Pizza(["Rød algesaus", "Hvalost", "Sjøgress"]);
-	setTextContentOnElement("#food-msg", `Laget pizza med topping: ${pizza.toppings.join(", ")}`);
+	setTextContentOnElement(
+		"#food-msg",
+		`Laget pizza med topping: ${pizza.toppings.join(", ")}`
+	);
 });
 
 /**
@@ -46,7 +49,7 @@ document.querySelector("#make-new-pizza")?.addEventListener("click", () => {
  */
 type CanOrderPizza = {
 	orderedPizza: Pizza;
-	orderNewPizza: (pizza: Pizza) => `Tusen takk!`;
+	orderNewPizza: (pizza: Pizza) => string;
 };
 
 class BouvetPenguin implements CanOrderPizza {}
