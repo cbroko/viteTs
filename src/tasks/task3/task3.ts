@@ -47,7 +47,7 @@ const getSupportedLanguage = (language): string => {
 		: "Language not supported";
 };
 
-document.querySelector("#task33-btn")?.addEventListener("click", () => {
+document.querySelector("#task32-btn")?.addEventListener("click", () => {
 	provideStudentId();
 });
 
