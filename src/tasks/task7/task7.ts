@@ -5,7 +5,7 @@ import { getRandomNumberBetween, setTextContentOnElement } from "../../utils";
  * Skriv om funksjonen lastValueOf
  * slik at den bruker en generisk parameter istedenfor `any`
  */
-const lastValueOf = (array: any[]) =>
+const lastValueOf = <T> (array: T[]) =>
 	array.length > 1 ? array.at(-2) : undefined;
 
 const cursedNumbers = [4, 8, 15, 16, 23, 42];
@@ -16,7 +16,7 @@ if (seriesElement)
 	seriesElement.textContent = `[ ${cursedNumbers.join(", ")} ]`;
 
 const lastValue = document.querySelector("#last-value");
-if (lastValue) lastValue.textContent = lastElement;
+if (lastValue) lastValue.textContent = lastElement?.toString() ?? "";
 
 /**
  * Oppgave 7.2
@@ -26,7 +26,7 @@ interface Nameable {
 }
 
 // TODO
-const invite = <T>({ fullName }: T) =>
+const invite = <T extends Nameable>({ fullName }: T) =>
 	`🐧🎉 ${fullName} er invitert til festen! 🥳`;
 
 const inputElement = document.querySelector(
@@ -62,7 +62,7 @@ class Penguin<
 	}
 > {
 	private partyTricks;
-	constructor(partyTricks) {
+	constructor(partyTricks: T[]) {
 		this.partyTricks = partyTricks;
 	}
 
@@ -77,12 +77,15 @@ class Penguin<
 	}
 }
 
+// No touchy
+type levelType = "beginner" | "intermediate" | "expert";
 interface Skills {
 	name: string;
 	perform: () => void;
-	level: "beginner" | "intermediate" | "expert";
+	level: levelType;
 }
 
+// No touchy
 let partyTrickInProgress = false;
 const skills = [
 	{
@@ -102,7 +105,7 @@ const skills = [
 				"Dancing ... please hold ... my drink!"
 			);
 		},
-		level: "intermediate",
+		level: "intermediate" as levelType,
 	},
 	{
 		name: "brake dance",
@@ -121,17 +124,19 @@ const skills = [
 				`Break dancing ... please hold ... my drink!`
 			);
 		},
-		level: "expert",
+		level: "expert" as levelType,
 	},
 ];
-
+// No touchy
 const partyPenguin = new Penguin<Skills>(skills);
 
+// No touchy
 document.querySelector("#party-btn")?.addEventListener("click", () => {
 	if (partyTrickInProgress) return;
 	partyPenguin.doPartyTrick();
 });
 
+// No touchy
 const allSkillsElement = document.querySelector("#all-skills");
 if (allSkillsElement) {
 	allSkillsElement.textContent = partyPenguin.tellUsAllYourPartyTricks();
