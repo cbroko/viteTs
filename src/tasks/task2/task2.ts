@@ -12,7 +12,7 @@ document.querySelector("#btn")?.addEventListener(() => {
  * @param element - Et node element, kan være null
  * @param text - Teksten som skal settes på elementet
  */
-function setTextOnElement(element: Element | null, text: string) {
+function setTextOnElement(element, text) {
 	if (!element) return;
 	element.textContent = text;
 }
@@ -36,9 +36,8 @@ const getEmojiFromMood = () => {
 
 document.querySelector("#mood-input")?.addEventListener("input", (event) => {
 	const outputElement = document.querySelector("#mood-output");
-	if (!outputElement || !event.target) return;
-
 	const { value } = event.target as HTMLInputElement;
 	// TODO
-	outputElement.textContent = value in emojis ? getEmojiFromMood(value) : "😶";
+	const emoji = value in emojis ? getEmojiFromMood(value) : "😶";
+	setTextOnElement(outputElement, emoji);
 });
