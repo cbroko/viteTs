@@ -72,7 +72,7 @@ type BouvetPenguin = Penguin & {
 		| "other";
 };
 
-const bouvetPenguin: CleverBouvetPenguin = {
+const bouvetPenguin: BouvetPenguin = {
 	name: "Oscar",
 	age: 30,
 	isTheFinestOfPenguins: true,
@@ -116,10 +116,10 @@ type VolatileButCleverPenguin = {
 	// TODO
 };
 
-const volotileButCleverPenguin: VolatileButCleverPenguin = {
+const volatileButCleverPenguin: VolatileButCleverPenguin = {
 	isTheFinestOfPenguins: true,
 };
 
-if (hasEqualKeys(volatilePenguin, volotileButCleverPenguin)) {
+if (hasEqualKeys(volatilePenguin, volatileButCleverPenguin)) {
 	document.getElementById("dance-8-4")?.classList.remove("hidden");
 }
