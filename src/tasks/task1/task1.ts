@@ -3,7 +3,9 @@ import { setTextContentOnElement } from "../../utils";
 /**
  * Oppgave 1.1
  */
-const numberInput = document.getElementById("number2-input") as HTMLInputElement;
+const numberInput = document.getElementById(
+	"number2-input"
+) as HTMLInputElement;
 
 const number1 = 2;
 
@@ -11,6 +13,7 @@ document.getElementById("calc-form")?.addEventListener("submit", (event) => {
 	event.preventDefault();
 	const number2 = numberInput?.value;
 	let sum = number1 + number2;
+	setTextContentOnElement("#number2", number2);
 	setTextContentOnElement("#sum", sum);
 	numberInput.value = "";
 });
