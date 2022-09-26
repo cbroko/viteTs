@@ -25,3 +25,18 @@ export const pizzaToppings = [
 	"Arktisk drakfisk",
 	"Sjøgress",
 ] as const;
+
+export const hasEqualKeys = <O1 extends object, O2 extends O1>(
+	obj1: O1,
+	obj2: O2
+) =>
+	Object.keys(obj1).every(
+		(key) =>
+			key in obj2 &&
+			typeof obj1[key as keyof O1] === typeof obj2[key as keyof O2]
+	) &&
+	Object.keys(obj2).every(
+		(key) =>
+			key in obj1 &&
+			typeof obj1[key as keyof O1] === typeof obj2[key as keyof O2]
+	);
