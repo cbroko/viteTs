@@ -12,7 +12,7 @@ document.querySelector("#btn")?.addEventListener(() => {
  * @param element - Et node element, kan være null
  * @param text - Teksten som skal settes på elementet
  */
-function setTextOnElement(element: Element | null, text: string) {
+function setTextOnElement(element, text) {
 	if (!element) return;
 	element.textContent = text;
 }
