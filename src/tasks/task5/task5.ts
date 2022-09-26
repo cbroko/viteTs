@@ -8,8 +8,10 @@ interface Eatable {
 
 /**
  * Oppgave 5.1
+ * Food trenger ikke å tas i bruk før 5.2
  */
-class Food {
+class Food implements Eatable {
+	eaten = false;
 	eat() {
 		if (this.eaten) {
 			setTextContentOnElement(
@@ -26,17 +28,22 @@ class Food {
 /**
  * Oppgave 5.2
  */
-class Pizza {
+class Pizza extends Food {
 	toppings: topping[];
+	constructor(toppings: topping[]) {
+		super();
+		this.toppings = toppings;
+	}
 }
 
-let pizza = new Pizza(["Rød algesaus", "Hvalost", "Sjøgress"]);
+let pizza: Pizza;
 document.querySelector("#eat-pizza")?.addEventListener("click", () => {
 	pizza.eat();
 });
 
-document.querySelector("#make-new")?.addEventListener("click", () => {
+document.querySelector("#make-new-pizza")?.addEventListener("click", () => {
 	pizza = new Pizza(["Rød algesaus", "Hvalost", "Sjøgress"]);
+	setTextContentOnElement("#food-msg", `Laget pizza med topping: ${pizza.toppings.join(", ")}`);
 });
 
 /**
@@ -47,7 +54,10 @@ type CanOrderPizza = {
 	orderNewPizza: (pizza: Pizza) => `Tusen takk!`;
 };
 
-class BouvetPenguin implements CanOrderPizza {}
+class BouvetPenguin implements CanOrderPizza {
+	orderedPizza = new Pizza(["Rød algesaus", "Hvalost", "Sjøgress"]);
+	orderNewPizza = (pizza: Pizza): `Tusen takk!` => { console.log("pizza: ", pizza); return `Tusen takk!` };
+}
 
 const pizaMaker = document.querySelector("#pizza-maker");
 const selectedToppings: topping[] = [];
