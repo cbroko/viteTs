@@ -1,10 +1,11 @@
 /**
  * Oppgave 2.1
  */
-document.querySelector("#btn")?.addEventListener(() => {
+document.querySelector("#btn")?.addEventListener("click", () => {
 	const outputElement = document.querySelector("#btn-msg");
-	if (!outputElement) return;
-	outputElement.textContent = "Du klikket, veldig bra! 🥳";
+	/* if (!outputElement) return;
+	outputElement.textContent = "Du klikket, veldig bra! 🥳"; */
+	setTextOnElement(outputElement, "Sweet, du har nesten løst oppgave 2.2")
 });
 
 /**
@@ -12,7 +13,7 @@ document.querySelector("#btn")?.addEventListener(() => {
  * @param element - Et node element, kan være null
  * @param text - Teksten som skal settes på elementet
  */
-function setTextOnElement(element, text) {
+function setTextOnElement(element: Element | null, text: string) {
 	if (!element) return;
 	element.textContent = text;
 }
@@ -25,19 +26,26 @@ const emojis = {
 	monday: "🫠",
 };
 type moodType = keyof typeof emojis;
+/* type moodType = {
+	cool: string,
+	notOk: string,
+	passiveAggressive: string,
+	happy: string,
+	monday: string,
+} */
+
 /**
  * Oppgave 2.3
  * @param mood
  * @returns En smiley basert på parameteren `mood`
  */
-const getEmojiFromMood = () => {
-	// TODO
+const getEmojiFromMood = (mood: moodType): string => {
+	return emojis[mood];
 };
 
 document.querySelector("#mood-input")?.addEventListener("input", (event) => {
 	const outputElement = document.querySelector("#mood-output");
 	const { value } = event.target as HTMLInputElement;
-	// TODO
-	const emoji = value in emojis ? getEmojiFromMood(value) : "😶";
+	const emoji = value in emojis ? getEmojiFromMood(value as moodType) : "😶";
 	setTextOnElement(outputElement, emoji);
 });

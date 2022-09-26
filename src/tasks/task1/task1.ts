@@ -12,8 +12,9 @@ const number1 = 2;
 document.querySelector("#calc-form")?.addEventListener("submit", (event) => {
 	event.preventDefault();
 	const number2 = numberInput?.value;
-	let sum = number1 + number2;
-	setTextContentOnElement("#sum", sum);
+	setTextContentOnElement("#number2", number2);
+	let sum: number = number1 + parseFloat(number2);
+	setTextContentOnElement("#sum", `${sum}`);
 	numberInput.value = "";
 });
 
@@ -25,7 +26,7 @@ document.querySelector("#name-form")?.addEventListener("submit", (event) => {
 	event.preventDefault();
 	const input = document.querySelector("#name-input") as HTMLInputElement;
 	const name = input?.value;
-	const greeting = sayHi();
+	const greeting = sayHi(name);
 	setTextContentOnElement("#greet", greeting);
 	input.value = "";
 });
@@ -33,7 +34,7 @@ document.querySelector("#name-form")?.addEventListener("submit", (event) => {
 /**
  * Oppgave 1.3
  */
-const giveMeAStraightAnswer = (question) =>
+const giveMeAStraightAnswer = (question: string) =>
 	question.length % 2 ? "ja!" : "nei!";
 
 document
@@ -42,7 +43,7 @@ document
 		event.preventDefault();
 		const input = document.querySelector("#question-input") as HTMLInputElement;
 		const question = input?.value;
-		const answer = giveMeAStraightAnswer();
+		const answer = giveMeAStraightAnswer(question);
 		setTextContentOnElement("#answer", answer);
 		input.value = "";
 	});
