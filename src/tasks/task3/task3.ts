@@ -18,7 +18,7 @@ const idYourSelf = ({ firstName, lastName, age, country }: Person) => {
 const personToId = {
 	firstName: "Kari",
 	lastName: "Normann",
-	age: 32,
+	age: 23,
 	country: "Norway"
 };
 
@@ -69,24 +69,42 @@ document.querySelector("#task32-btn")?.addEventListener("click", () => {
 /**
  * Oppgave 3.2
  */
-interface Faculty {}
+interface Faculty {
+	name: string,
+	leader: Person
+}
 
-interface NTNUStudent {}
+interface NTNUStudent extends Student {
+	faculty: Faculty
+}
+
+const NTNUStudentId: NTNUStudent = {
+	...(studentToId),
+	faculty: {
+		name: "Fakultet 1",
+		leader: {
+			firstName: "Per",
+			lastName: "Fakultetleder",
+			age: 42,
+			country: "Norway"
+		}
+	}
+};
 
 const provideNTNUStudentId = ({
 	lastName,
 	faculty,
 	studentNumber,
 }: NTNUStudent) => {
-	setTextContentOnElement("#student-name", `${lastName}`);
-	setTextContentOnElement("#student-id", `${studentNumber}`);
-	setTextContentOnElement("#student-faculty", `${faculty.name}`);
+	setTextContentOnElement("#ntnu-name", `${lastName}`);
+	setTextContentOnElement("#ntnu-id", `${studentNumber}`);
+	setTextContentOnElement("#ntnu-faculty", `${faculty.name}`);
 	setTextContentOnElement(
-		"#student-leader",
+		"#ntnu-leader",
 		`${faculty.leader.firstName} ${faculty.leader.lastName}`
 	);
 };
 
 document.querySelector("#task33-btn")?.addEventListener("click", () => {
-	provideNTNUStudentId();
+	provideNTNUStudentId(NTNUStudentId);
 });
