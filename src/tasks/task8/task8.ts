@@ -1,4 +1,4 @@
-import { setTextContentOnElement } from "../../utils";
+import { setTextContentOnElement, hasEqualKeys } from "../../utils";
 
 interface Penguin {
 	name: string;
@@ -72,6 +72,16 @@ type BouvetPenguin = Penguin & {
 		| "other";
 };
 
+const bouvetPenguin: CleverBouvetPenguin = {
+	name: "Oscar",
+	age: 30,
+	isTheFinestOfPenguins: true,
+	numberOfDaysAtBouvetIsland: Math.round(3.5 * 365),
+	numberOfFriendsAtBouvetIsland: 30,
+	annualSalary: 50,
+	profession: "developer",
+};
+
 type CleverBouvetPenguin = {
 	// TODO
 };
@@ -80,9 +90,11 @@ const cleverBouvetPenguin: CleverBouvetPenguin = {
 	name: "Christian",
 	age: 27,
 	isTheFinestOfPenguins: true,
-	numberOfDaysAtBouvetIsland: 738,
 };
 
+if (hasEqualKeys(bouvetPenguin, cleverBouvetPenguin)) {
+	document.getElementById("dance-8-3")?.classList.remove("hidden");
+}
 /**
  * Oppgave 8.4
  */
