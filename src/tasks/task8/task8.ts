@@ -98,6 +98,7 @@ const cleverBouvetPenguin: CleverBouvetPenguin = {
 if (hasEqualKeys(bouvetPenguin, cleverBouvetPenguin)) {
 	document.getElementById("dance-8-3")?.classList.remove("hidden");
 }
+
 /**
  * Oppgave 8.4
  */
@@ -108,8 +109,20 @@ type VolatilePenguin = Penguin & {
 	height?: number;
 };
 
+const volatilePenguin: VolatilePenguin = {
+	name: "Vigdis",
+	age: 29,
+	isTheFinestOfPenguins: true,
+};
+
 type VolatileButCleverPenguin = {
 	[key in keyof Penguin]+?: Penguin[key]
 };
 
-const volotileButCleverPenguin: VolatileButCleverPenguin = { age: 30 };
+const volotileButCleverPenguin: VolatileButCleverPenguin = {
+	isTheFinestOfPenguins: true,
+};
+
+if (hasEqualKeys(volatilePenguin, volotileButCleverPenguin)) {
+	document.getElementById("dance-8-4")?.classList.remove("hidden");
+}
