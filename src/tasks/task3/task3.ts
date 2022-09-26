@@ -52,7 +52,7 @@ document.querySelector("#task32-btn")?.addEventListener("click", () => {
 });
 
 /**
- * Oppgave 3.2
+ * Oppgave 3.3
  */
 interface Faculty {}
 

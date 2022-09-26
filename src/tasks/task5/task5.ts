@@ -8,6 +8,7 @@ interface Eatable {
 
 /**
  * Oppgave 5.1
+ * Food trenger ikke å tas i bruk før 5.2
  */
 class Food {
 	eat() {
@@ -35,8 +36,9 @@ document.querySelector("#eat-pizza")?.addEventListener("click", () => {
 	pizza.eat();
 });
 
-document.querySelector("#make-new")?.addEventListener("click", () => {
+document.querySelector("#make-new-pizza")?.addEventListener("click", () => {
 	pizza = new Pizza(["Rød algesaus", "Hvalost", "Sjøgress"]);
+	setTextContentOnElement("#food-msg", `Laget pizza med topping: ${pizza.toppings.join(", ")}`);
 });
 
 /**
