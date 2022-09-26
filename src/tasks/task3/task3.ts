@@ -48,7 +48,7 @@ const provideStudentId = ({
 		`Utvekslingsstudent, ${getSupportedLanguage(preferredLanguage)}`
 	);
 };
-const getSupportedLanguage = (language): string => {
+const getSupportedLanguage = (language: string): string => {
 	return language === "nn" || language === "nb"
 		? "Norsk"
 		: language === "en"
@@ -56,8 +56,14 @@ const getSupportedLanguage = (language): string => {
 		: "Language not supported";
 };
 
-document.querySelector("#task33-btn")?.addEventListener("click", () => {
-	provideStudentId();
+const studentToId: Student = {
+	...(personToId),
+	studentNumber: 4552,
+	preferredLanguage: "nb"
+};
+
+document.querySelector("#task32-btn")?.addEventListener("click", () => {
+	provideStudentId(studentToId);
 });
 
 /**
