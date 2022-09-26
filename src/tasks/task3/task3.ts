@@ -47,7 +47,6 @@ const getSupportedLanguage = (language): string => {
 		: "Language not supported";
 };
 
-//No touchy
 document.querySelector("#task33-btn")?.addEventListener("click", () => {
 	provideStudentId();
 });
@@ -72,7 +71,7 @@ const provideNTNUStudentId = ({
 		`${faculty.leader.firstName} ${faculty.leader.lastName}`
 	);
 };
-//No touchy
+
 document.querySelector("#task33-btn")?.addEventListener("click", () => {
 	provideNTNUStudentId();
 });
