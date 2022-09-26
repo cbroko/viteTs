@@ -17,6 +17,7 @@ const basicTerminator: Terminator = {
 	weapon: "gun",
 };
 
+// No touchy
 const performTasks = (terminator: Terminator): void => {
 	try {
 		terminator.boot();
@@ -31,6 +32,7 @@ const performTasks = (terminator: Terminator): void => {
 		console.error("Beep boop. Error detected:", error);
 	}
 };
+
 document.querySelector("#task41-btn")?.addEventListener("click", () => {
 	performTasks();
 });
