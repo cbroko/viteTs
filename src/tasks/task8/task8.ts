@@ -86,6 +86,8 @@ type VolatilePenguin = Penguin & {
 	height?: number;
 };
 
-type VolatileButCleverPenguin = {};
+type VolatileButCleverPenguin = {
+	[key in keyof Penguin]+?: Penguin[key]
+};
 
 const volotileButCleverPenguin: VolatileButCleverPenguin = { age: 30 };
