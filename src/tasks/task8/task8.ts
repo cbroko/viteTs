@@ -22,7 +22,7 @@ interface Project {
 	name: string;
 	clientName: string;
 	startDate: Date;
-	endDate: Date;
+	endDate?: Date;
 }
 
 type fish = number;
@@ -75,11 +75,18 @@ type BouvetPenguin = Penguin & {
 const bouvetPenguin: BouvetPenguin = {
 	name: "Oscar",
 	age: 30,
+	weight: 80,
+	height: 186,
 	isTheFinestOfPenguins: true,
 	numberOfDaysAtBouvetIsland: Math.round(3.5 * 365),
 	numberOfFriendsAtBouvetIsland: 30,
 	annualSalary: 50,
 	profession: "developer",
+	project: {
+		name: "SG",
+		clientName: "Service Grossistene",
+		startDate: new Date("2022-08-01"),
+	},
 };
 
 type CleverBouvetPenguin = {
@@ -90,6 +97,8 @@ const cleverBouvetPenguin: CleverBouvetPenguin = {
 	name: "Christian",
 	age: 27,
 	isTheFinestOfPenguins: true,
+	weight: 80,
+	height: 186,
 };
 
 if (hasEqualKeys(bouvetPenguin, cleverBouvetPenguin)) {
@@ -99,12 +108,13 @@ if (hasEqualKeys(bouvetPenguin, cleverBouvetPenguin)) {
 /**
  * Oppgave 8.4
  */
-type VolatilePenguin = Penguin & {
+interface VolatilePenguin
+	extends Omit<Penguin, "name" | "age" | "weight" | "height"> {
 	name?: string;
 	age?: number;
 	weight?: number;
 	height?: number;
-};
+}
 
 const volatilePenguin: VolatilePenguin = {
 	name: "Vigdis",
