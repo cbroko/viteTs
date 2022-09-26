@@ -30,6 +30,8 @@ type fish = number;
 /**
  * Oppgave 8.1
  */
+type penguinKey = keyof Penguin;
+
 const aKeyOfPenguin: penguinKey = "name";
 
 const penguin = {
@@ -42,7 +44,7 @@ setTextContentOnElement("#penguin-name", penguin[aKeyOfPenguin]);
 /**
  * Oppgave 8.2
  */
-const getValueByKey = <T>(obj: T, key) => obj[key];
+const getValueByKey = <T>(obj: T, key: keyof T) => obj[key];
 const penguinName = getValueByKey(penguin, aKeyOfPenguin);
 
 /**
@@ -63,7 +65,9 @@ type BouvetPenguin = Penguin & {
 };
 
 // TODO
-type CleverBouvetPenguin = {};
+type CleverBouvetPenguin = {
+	[key in keyof Penguin]-?: Penguin[key]
+};
 
 const cleverBouvetPenguin: CleverBouvetPenguin = {
 	name: "Christian",
